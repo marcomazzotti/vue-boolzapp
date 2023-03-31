@@ -6,12 +6,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Boolzapp</title>
 </head>
 <body>
   
   <div id="app">
     
+    <div class="wrapper">
+      <div class="box">
+        <div class="users">
+          <div class="header-users">
+            <div class="user">
+              <img src="img/avatar_1.jpg" alt="">
+              <span>Marco</span>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="notifications">
+            <i class="fa-solid fa-bell-slash"></i>
+            <div class="notifications-text">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <p class="notifications-on">Attiva notifiche desktop</p>
+            </div>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+        </div>
+
+        <div class="chat">
+          <div class="header-chat">
+            <div class="user">
+              <img src="img/avatar_2.jpg" alt="">
+              <div class="details">
+                <span>Michele</span>
+                <p class="login">Ultimo accesso oggi alle 12.00</p>
+              </div>
+            </div>
+              <div class="icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+          </div>
+
+          <div class="body-chat">
+            <div class="row-sent">
+              <div class="msg msg-sent">
+                <p>Hai portato a spasso il cane?</p>
+                <p class="time">15.30</p>
+              </div>
+            </div>
+            <div class="row-sent">
+              <div class="msg msg-sent">
+                <p>Ricordati di stendere i panni</p>
+                <p class="time">15.50</p>
+              </div>
+            </div>
+            <div class="row-received">
+              <div class="msg">
+                <p>Tutto fatto!</p>
+                <p class="time">16.15</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-chat">
+            <div class="left">
+              <i class="fa-regular fa-face-smile"></i>
+            </div>
+            <div class="center">
+              <input type="text" placeholder="Scrivi un messaggio">
+            </div>
+            <div class="right">
+              <i class="fa-solid fa-microphone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/script.js"></script>

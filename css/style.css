@@ -1,5 +1,170 @@
+/* RESET */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* COMMON */
+.wrapper{
+  background: linear-gradient(#0a9688, #d7dbd6);
+  height: 100vh;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.box{
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+}
+
+.header-users, .header-chat{
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  height: 60px;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+}
+
+.user img{
+  border-radius: 50%;
+  width: 40px;
+  margin-right: 0.5rem;
+}
+
+.icons i{
+  color: grey;
+  padding: 0.3rem;
+}
+
+/* USERS */
+.users{
+  width: 40%;
+  height: 100%;
+  /* border: 1px solid black; */
+  background-color: white;
+}
+
+.notifications{
+  display: flex;
+  align-items: center;
+  background-color: #8edafc;
+  padding: 1rem;
+}
+
+.notifications i{
+  color: #8edafc;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.notifications-on {
+  font-size: 0.8rem;
+  color: grey;
+  text-decoration: underline;
+}
+
+.search {
+  display: flex;
+  padding: 0.4rem;
+  background-color: #f9f9f9;
+}
+
+.search i{
+  color: grey;
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+
+.search input{
+  width: 100%;
+  border: none;
+}
+
+::placeholder{
+  padding-left: 0.5rem;
+}
+
+/* CHAT */
+.chat{
+  width: 60%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.login{
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.body-chat{
+  background-image: url("/img/mine.jpg");
+  height: calc(100% - 120px);
+  padding: 2.5rem 2.5rem;
+}
+
+.row-sent{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.msg{
+  display: inline-block;
+  padding: 1rem 8rem 1rem 1rem;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.time{
+  font-size: 0.7rem;
+  color: grey;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+
+.msg-sent{
+  background-color: #d5f9ba;
+}
+
+.footer-chat{
+  height: 60px;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+}
+
+.right, .left{
+  width: 10%;
+  text-align: center;
+  color: grey;
+  font-size: 1.3rem;
+}
+
+.center input{
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+}
+
+.center{
+  width: calc(100% - 20%);
 }

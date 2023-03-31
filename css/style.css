@@ -4,6 +4,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  font-family: 'Open Sans', sans-serif;
+}
 
 /* COMMON */
 .wrapper{
@@ -98,6 +101,26 @@
 
 ::placeholder{
   padding-left: 0.5rem;
+}
+
+.message img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.message {
+  display: flex;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.info {
+  margin-left: 1rem;
+}
+
+.last-message {
+  font-size: .7rem;
+  color: gray;
 }
 
 /* CHAT */

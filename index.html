@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <title>Boolzapp</title>
 </head>
 <body>
@@ -15,7 +18,10 @@
     
     <div class="wrapper">
       <div class="box">
+
+        <!-- users/left section -->
         <div class="users">
+          <!-- header-users -->
           <div class="header-users">
             <div class="user">
               <img src="img/avatar_1.jpg" alt="">
@@ -27,6 +33,8 @@
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </div>
+          <!-- /header-users -->
+          <!-- notifications-users -->
           <div class="notifications">
             <i class="fa-solid fa-bell-slash"></i>
             <div class="notifications-text">
@@ -34,13 +42,32 @@
               <p class="notifications-on">Attiva notifiche desktop</p>
             </div>
           </div>
+          <!-- /notifications-users -->
+          <!-- search-users -->
           <div class="search">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
+          <!-- /search-users -->
+          <!-- contact-list-users -->
+          <div class="contacts-list">
+            <ul>
+              <li v-for="item in contacts" class="message">
+                <img :src="item.avatar" alt="">
+                <div class="info">
+                  <p>{{item.name}}</p>
+                  <p class="last-message">Ultimo messaggio inviato</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /contact-list-users -->
         </div>
+        <!-- /users-left section -->
 
+        <!-- chat/right section -->
         <div class="chat">
+          <!-- header-chat -->
           <div class="header-chat">
             <div class="user">
               <img src="img/avatar_2.jpg" alt="">
@@ -55,7 +82,8 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
           </div>
-
+          <!-- header-chat -->
+          <!-- body-chat -->
           <div class="body-chat">
             <div class="row-sent">
               <div class="msg msg-sent">
@@ -76,7 +104,8 @@
               </div>
             </div>
           </div>
-
+          <!-- /body-chat -->
+          <!-- footer-chat -->
           <div class="footer-chat">
             <div class="left">
               <i class="fa-regular fa-face-smile"></i>
@@ -88,9 +117,12 @@
               <i class="fa-solid fa-microphone"></i>
             </div>
           </div>
+          <!-- /footer-chat -->
         </div>
+        <!-- /chat-right section -->
       </div>
     </div>
+
   </div>
 
   <script src="js/script.js"></script>

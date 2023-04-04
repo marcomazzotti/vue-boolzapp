@@ -23,7 +23,7 @@
         <div class="users">
           <!-- header-users -->
           <div class="header-users">
-            <div class="user">
+            <div class="avatar">
               <img src="img/avatar_1.jpg" alt="">
               <span>Marco</span>
             </div>
@@ -34,6 +34,7 @@
             </div>
           </div>
           <!-- /header-users -->
+
           <!-- notifications-users -->
           <div class="notifications">
             <i class="fa-solid fa-bell-slash"></i>
@@ -43,36 +44,41 @@
             </div>
           </div>
           <!-- /notifications-users -->
+
           <!-- search-users -->
           <div class="search">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /search-users -->
+
           <!-- contact-list-users -->
-          <div class="contacts-list">
-            <ul>
-              <li v-for="item in contacts" class="message">
-                <img :src="item.avatar" alt="">
-                <div class="info">
-                  <p>{{item.name}}</p>
-                  <p class="last-message">Ultimo messaggio inviato</p>
+          <div class="contact-list">
+            <div class="contact-item" v-for="contact in contacts">
+              <div class="chat-info">
+                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                <div class="name">
+                  <p>{{contact.name}}</p>
+                  <p class="last-message">Ultimo messaggio</p>
+                  <span class="time-chat">15.00</span>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <!-- /contact-list-users -->
+
         </div>
         <!-- /users-left section -->
 
         <!-- chat/right section -->
         <div class="chat">
+
           <!-- header-chat -->
           <div class="header-chat">
-            <div class="user">
-              <img src="img/avatar_2.jpg" alt="">
+            <div class="avatar">
+              <img :src="`img/avatar${contacts[activeChat].avatar}.jpg`" alt="">
               <div class="details">
-                <span>Michele</span>
+                <span>{{contacts[activeChat].name}}</span>
                 <p class="login">Ultimo accesso oggi alle 12.00</p>
               </div>
             </div>
@@ -82,29 +88,31 @@
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
           </div>
-          <!-- header-chat -->
+          <!-- /header-chat -->
+
           <!-- body-chat -->
           <div class="body-chat">
             <div class="row-sent">
-              <div class="msg msg-sent">
+              <div class="msg-sent">
                 <p>Hai portato a spasso il cane?</p>
-                <p class="time">15.30</p>
+                <p class="time-msg">15.30</p>
               </div>
             </div>
             <div class="row-sent">
-              <div class="msg msg-sent">
+              <div class="msg-sent">
                 <p>Ricordati di stendere i panni</p>
-                <p class="time">15.50</p>
+                <p class="time-msg">15.50</p>
               </div>
             </div>
             <div class="row-received">
               <div class="msg">
                 <p>Tutto fatto!</p>
-                <p class="time">16.15</p>
+                <p class="time-msg">16.15</p>
               </div>
             </div>
           </div>
           <!-- /body-chat -->
+
           <!-- footer-chat -->
           <div class="footer-chat">
             <div class="left">
@@ -118,6 +126,7 @@
             </div>
           </div>
           <!-- /footer-chat -->
+
         </div>
         <!-- /chat-right section -->
       </div>
@@ -125,6 +134,7 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 const {createApp} = Vue;
 
+const dt = luxon.DateTime; 
+
 createApp({
     data() {
         return {
@@ -184,26 +186,34 @@ createApp({
             }
         },
         sendMessage(){
+            let currentDate = new Date().toLocaleString("en-GB");
+
             const message = {
                 message: this.newMessage,
-                date: "",
+                date: currentDate,
                 status: "sent"
             }
             this.contacts[this.activeChat].messages.push(message);
             this.newMessage = "";
         },
         receiveMessage(){
+            let currentDate = new Date().toLocaleString("en-GB");
+
             const message = {
                 message: "ok",
-                date: "",
+                date: currentDate,
                 status: "received"
             }
             this.contacts[this.activeChat].messages.push(message);
         },
         findChat(){
             this.contacts = this.contacts.filter((contact) => {
-                return contact.name.toLowerCase().includes(this.foundChat.toLowerCase())
+            return contact.name.toLowerCase().includes(this.foundChat.toLowerCase())
             })
-        }
+        },
+        // getTime(dateStr) {
+        //     const myDate = dt.fromFormat(dateStr, "HH:mm");
+        //     return myDate.toLocaleString(dt.TIME_24_SIMPLE);
+        //     },
     }
 }).mount("#app")

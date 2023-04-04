@@ -95,7 +95,7 @@
             <div class="row" v-for="message in contacts[activeChat].messages" :class="message.status">
               <div class="msg">
                 <p>{{message.message}}</p>
-                <p class="time-msg">{{message.date}}</p>
+                <p class="time-msg">{{message.date.substring(11).slice(0, -3)}}</p>
               </div>
             </div>
           </div>
@@ -122,6 +122,7 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

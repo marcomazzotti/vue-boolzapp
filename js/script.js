@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activeChat: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -173,5 +174,30 @@ createApp({
         changeActiveChat(newChat) {
             this.activeChat = newChat;
         },
+        addNewMessage() {
+            if (this.newMessage.length > 0) {
+                this.sendMessage();
+                setTimeout(() => {
+                    this.receiveMessage();
+                }, 1000)
+            }
+        },
+        sendMessage(){
+            const message = {
+                message: this.newMessage,
+                date: "",
+                status: "sent"
+            }
+            this.contacts[this.activeChat].messages.push(message);
+            this.newMessage = "";
+        },
+        receiveMessage(){
+            const message = {
+                message: "ok",
+                date: "",
+                status: "received"
+            }
+            this.contacts[this.activeChat].messages.push(message);
+        }
     }
 }).mount("#app")

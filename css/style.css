@@ -164,6 +164,7 @@ body{
   background-image: url(../img/mine.jpg);
   height: calc(100% - 120px);
   padding: 2.5rem 2.5rem;
+  overflow-y: auto;
 }
 
 .row{
@@ -187,6 +188,7 @@ body{
   margin-bottom: 10px;
   min-width: 40%;
   max-width: 60%;
+  word-wrap: break-word;
 }
 
 .sent .msg{

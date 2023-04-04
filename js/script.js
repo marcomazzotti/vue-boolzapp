@@ -5,6 +5,7 @@ createApp({
         return {
             activeChat: 0,
             newMessage: "",
+            foundChat: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -198,6 +199,11 @@ createApp({
                 status: "received"
             }
             this.contacts[this.activeChat].messages.push(message);
+        },
+        findChat(){
+            this.contacts = this.contacts.filter((contact) => {
+                return contact.name.toLowerCase().includes(this.foundChat.toLowerCase())
+            })
         }
     }
 }).mount("#app")

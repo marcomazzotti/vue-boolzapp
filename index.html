@@ -54,7 +54,7 @@
 
           <!-- contact-list-users -->
           <div class="contact-list">
-            <div class="contact-item" v-for="contact in contacts">
+            <div class="contact-item" v-for="(contact, index) in contacts" @click="changeActiveChat(index)" :class="index === activeChat ? `active-chat` : ``">
               <div class="chat-info">
                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                 <div class="name">
@@ -92,22 +92,10 @@
 
           <!-- body-chat -->
           <div class="body-chat">
-            <div class="row-sent">
-              <div class="msg-sent">
-                <p>Hai portato a spasso il cane?</p>
-                <p class="time-msg">15.30</p>
-              </div>
-            </div>
-            <div class="row-sent">
-              <div class="msg-sent">
-                <p>Ricordati di stendere i panni</p>
-                <p class="time-msg">15.50</p>
-              </div>
-            </div>
-            <div class="row-received">
+            <div class="row" v-for="message in contacts[activeChat].messages" :class="message.status">
               <div class="msg">
-                <p>Tutto fatto!</p>
-                <p class="time-msg">16.15</p>
+                <p>{{message.message}}</p>
+                <p class="time-msg">{{message.date}}</p>
               </div>
             </div>
           </div>

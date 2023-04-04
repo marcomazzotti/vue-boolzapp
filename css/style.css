@@ -120,6 +120,10 @@ body{
   position: relative;
 }
 
+.active-chat{
+  background-color: lightgreen;
+}
+
 .chat-info img{
   width: 40px;
   height: 40px;
@@ -162,13 +166,15 @@ body{
   padding: 2.5rem 2.5rem;
 }
 
-.row-sent{
+.row{
   display: flex;
+}
+
+.row.sent{
   justify-content: flex-end;
 }
 
-.row-received{
-  display: flex;
+.row.received{
   justify-content: flex-start;
 }
 
@@ -183,15 +189,7 @@ body{
   max-width: 60%;
 }
 
-.msg-sent{
-  display: inline-block;
-  padding: 20px 50px 20px 20px;
-  background-color: white;
-  border-radius: 10px;
-  position: relative;
-  margin-bottom: 10px;
-  min-width: 40%;
-  max-width: 60%;
+.sent .msg{
   background-color: #d5f9ba;
 }
 
